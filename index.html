@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Challa | Portfolio</title>
+    <meta name="description" content="Arjun Challa - High school student focused on quantitative finance, machine learning, and financial technology innovation.">
+    <meta name="keywords" content="Arjun Challa, quantitative finance, machine learning, programming, high school student, portfolio">
+    <link rel="icon" href="/api/placeholder/32/32" type="image/png">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --text: #8892b0;
+            --highlight: #64ffda;
+            --white: #e6f1ff;
+            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--highlight);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--highlight);
+            opacity: 0.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 150px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--highlight);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 32px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            font-size: 14px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--highlight);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+        }
+        
+        .hero-subtitle {
+            color: var(--highlight);
+            font-size: 16px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title {
+            font-size: 80px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-description {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--highlight);
+            border: 1px solid var(--highlight);
+            border-radius: 4px;
+            padding: 20px 28px;
+            font-size: 14px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            margin-right: 20px;
+        }
+        
+        .cta-btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 300px;
+            background-color: var(--secondary);
+            margin-left: 20px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-text ul {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(140px, 200px));
+            gap: 0px 10px;
+            padding: 0;
+            margin: 20px 0 0 0;
+            overflow: hidden;
+            list-style: none;
+        }
+
+        .about-text ul li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 14px;
+        }
+
+        .about-text ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--highlight);
+            font-size: 14px;
+            line-height: 20px;
+        }
+        
+        .about-image {
+            position: relative;
+            max-width: 300px;
+        }
+        
+        .about-image::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--highlight);
+            border-radius: 4px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover::before {
+            top: 15px;
+            left: 15px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 4px;
+            filter: grayscale(100%) contrast(1.2);
+            mix-blend-mode: multiply;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            filter: none;
+            mix-blend-mode: normal;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background-color: var(--secondary);
+            border-radius: 4px;
+            padding: 32px 28px;
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+        
+        .folder-icon {
+            color: var(--highlight);
+            font-size: 40px;
+        }
+        
+        .project-links a {
+            margin-left: 15px;
+            font-size: 22px;
+        }
+        
+        .project-title {
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 12px;
+        }
+        
+        .project-tech span {
+            margin-right: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .education-item, .award-item, .certification-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .education-item::before, .award-item::before, .certification-item::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--highlight);
+            font-size: 20px;
+            line-height: 24px;
+        }
+        
+        .education-school, .award-title, .certification-title {
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+        
+        .education-degree, .award-year, .certification-org {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .education-details {
+            font-size: 16px;
+        }
+        
+        .contact {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-title {
+            color: var(--highlight);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .contact h2 {
+            font-size: 60px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .contact-text {
+            margin-bottom: 50px;
+        }
+        
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .fade-in-1 { animation-delay: 0.1s; }
+        .fade-in-2 { animation-delay: 0.2s; }
+        .fade-in-3 { animation-delay: 0.3s; }
+        .fade-in-4 { animation-delay: 0.4s; }
+        .fade-in-5 { animation-delay: 0.5s; }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: var(--secondary);
+            border-radius: 4px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h3 {
+            color: var(--highlight);
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            padding-bottom: 10px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--highlight);
+        }
+
+        /* Extracurricular Section */
+        .extracurricular-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .extracurricular-item {
+            background-color: var(--secondary);
+            border-radius: 4px;
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .extracurricular-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .extracurricular-title {
+            color: var(--white);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .extracurricular-role {
+            color: var(--highlight);
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .extracurricular-description {
+            font-size: 16px;
+        }
+
+        /* Dark mode toggle */
+        .theme-switch {
+            display: flex;
+            align-items: center;
+        }
+        
+        .theme-switch-label {
+            margin-right: 10px;
+            font-size: 14px;
+            color: var(--white);
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--secondary);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--highlight);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1080px) {
+            .container {
+                padding: 0 100px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 50px;
+            }
+            
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                margin: 0 auto 50px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+            }
+            
+            .section-title::after {
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .hero-description {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .section-title::after {
+                width: 100px;
+            }
+            
+            .project-card {
+                padding: 20px;
+            }
+            
+            .contact h2 {
+                font-size: 40px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">AC</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#extracurricular">Activities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-subtitle fade-in fade-in-1">Hi, my name is</p>
+                <h1 class="hero-title fade-in fade-in-2">Arjun Challa.</h1>
+                <h2 class="hero-title fade-in fade-in-3" style="color: var(--text);">I build things with code & data.</h2>
+                <p class="hero-description fade-in fade-in-4">
+                    I'm a high school student with a passion for quantitative finance, machine learning, and innovation. 
+                    Currently focused on developing my skills in programming, data analysis, and financial technology.
+                </p>
+                <div class="fade-in fade-in-5">
+                    <a href="#projects" class="cta-btn">View My Work</a>
+                    <a href="#contact" class="cta-btn">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm Arjun, a motivated high school student at Urbana High School with a strong work ethic and passion for learning.
+                        I'm particularly interested in quantitative finance, machine learning, and mathematical modeling.
+                    </p>
+                    <p>
+                        My journey in programming began with Python and has since expanded to include web development, 
+                        data analysis, and machine learning. I'm constantly seeking opportunities to apply these skills 
+                        to solve real-world problems and contribute meaningfully to organizations and communities.
+                    </p>
+                    <p>
+                        Outside of academics, I play saxophone in the school band, practice piano, and actively participate in 
+                        various clubs including Finance Club, AI Club, and Model UN. I also volunteer at Chinmaya Mission Washington Regional Center.
+                    </p>
+                    <p>Here are a few technologies I've been working with recently:</p>
+                    <ul>
+                        <li>Python (ML)</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/300/300" alt="Arjun Challa">
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Skills & Interests</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python (Machine Learning)</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li>Statistical Modeling</li>
+                        <li>Excel</li>
+                        <li>Data Visualization</li>
+                        <li>Mathematical Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Interests</h3>
+                    <ul class="skill-list">
+                        <li>Quantitative Finance</li>
+                        <li>Machine Learning/AI</li>
+                        <li>Statistical Modeling</li>
+                        <li>Mathematical Research</li>
+                        <li>Financial Technology</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-top">
+                        <div class="folder-icon">
+                            <i class="far fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">ML Budgeting Tool</h3>
+                    <p class="project-description">
+                        Created a machine learning-based budgeting tool that helps users track spending and manage their finances more effectively.
+                        The tool categorizes expenses, identifies spending patterns, and provides personalized savings recommendations.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Data Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-top">
+                        <div class="folder-icon">
+                            <i class="far fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">GERD Solution</h3>
+                    <p class="project-description">
+                        Worked with a team to create a 3D printable solution for Gastroesophageal Reflux Disease.
+                        Developed a design that could be placed inside the patient to prevent refluxes.
+                    </p>
+                    <div class="project-tech">
+                        <span>CAD</span>
+                        <span>3D Printing</span>
+                        <span>Medical Design</span>
+                        <span>Financial Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-top">
+                        <div class="folder-icon">
+                            <i class="far fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">COVID-19 Analysis</h3>
+                    <p class="project-description">
+                        Analyzed the spread and impact of COVID-19 in a specific region and evaluated the effectiveness of public health interventions using data.
+                    </p>
+                    <div class="project-tech">
+                        <span>Data Analysis</span>
+                        <span>Statistical Modeling</span>
+                        <span>Epidemiology</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-top">
+                        <div class="folder-icon">
+                            <i class="far fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Inventory Management Software</h3>
+                    <p class="project-description">
+                        Designed and developed a custom inventory management software for a local business, improving inventory tracking accuracy and reducing overstock issues.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Database Management</span>
+                        <span>UI Design</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-top">
+                        <div class="folder-icon">
+                            <i class="far fa-folder-open"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Psychology Research Publication</h3>
+                    <p class="project-description">
+                        Wrote articles on the role of AI & digital technology in managing stress and anxiety, as well as their role in developing stress, anxiety, and depression.
+                    </p>
+                    <div class="project-tech">
+                        <span>Research</span>
+                        <span>Academic Writing</span>
+                        <span>Psychology</span>
+                        <span>AI & Technology</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-item">
+                <h3 class="education-school">Urbana High School</h3>
+                <p class="education-degree">Class of 2027 | GPA: 4.5 (Unweighted: 3.7)</p>
+                <div class="education-details">
+                    <p><strong>Courses:</strong> AP Microeconomics, AP Computer Science A, AP US History, Statistics Honors, AP Calculus AB, AP Calculus BC, AP Physics 1, AP US Government</p>
+                    <p><strong>Athletics:</strong> Track Team</p>
+                </div>
+            </div>
+            
+            <h3 style="color: var(--white); margin: 50px 0 30px;">Certifications</h3>
+            
+            <div class="certification-item">
+                <h3 class="certification-title">Fundamentals of Quantitative Modeling</h3>
+                <p class="certification-org">University of Pennsylvania, Wharton</p>
+            </div>
+            
+            <div class="certification-item">
+                <h3 class="certification-title">Fundamentals of Machine Learning in Finance</h3>
+                <p class="certification-org">NYU, Tandon School of Engineering</p>
+            </div>
+            
+            <div class="certification-item">
+                <h3 class="certification-title">Introduction to Financial Engineering and Risk Management</h3>
+                <p class="certification-org">Columbia University</p>
+            </div>
+            
+            <div class="certification-item">
+                <h3 class="certification-title">Optimization Methods in Asset Management</h3>
+                <p class="certification-org">Columbia University</p>
+            </div>
+            
+            <div class="certification-item">
+                <h3 class="certification-title">Artificial Intelligence in Wealth Management</h3>
+                <p class="certification-org">University of Illinois Urbana-Champaign</p>
+            </div>
+            
+            <div class="certification-item">
+                <h3 class="certification-title">Financial Management Specialization</h3>
+                <p class="certification-org">Duke University</p>
+            </div>
+            
+            <h3 style="color: var(--white); margin: 50px 0 30px;">Awards</h3>
+            
+            <div class="award-item">
+                <h3 class="award-title">Gold Presidential Service Award</h3>
+                <p class="award-year">2024</p>
+            </div>
+            
+            <div class="award-item">
+                <h3 class="award-title">Publication in International Psychology Conference Journal</h3>
+                <p class="award-year">2023</p>
+            </div>
+            
+            <div class="award-item">
+                <h3 class="award-title">4th Place in FBLA RLC for Intro To Programming</h3>
+                <p class="award-year">2024</p>
+            </div>
+            
+            <div class="award-item">
+                <h3 class="award-title">Published article on Enhancing Psychological Well-being Through Financial Resilience</h3>
+                <p class="award-year">2025</p>
+            </div>
+            
+            <div class="award-item">
+                <h3 class="award-title">Qualified for FBLA Maryland State Conference for Intro To Programming</h3>
+                <p class="award-year">2025</p>
+            </div>
+        </section>
+
+        <section id="extracurricular">
+            <h2 class="section-title">Extracurricular Activities</h2>
+            <div class="extracurricular-grid">
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">Computer Science Club</h3>
+                    <p class="extracurricular-role">President (August 2024 - Present)</p>
+                    <p class="extracurricular-description">
+                        Organized activities, led meetings, and raised funds for the club. Facilitated learning opportunities for members and organized competitions.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">Music</h3>
+                    <p class="extracurricular-role">Saxophone Player & Pianist</p>
+                    <p class="extracurricular-description">
+                        Played saxophone in the school band since 2019, performing at 10+ school events and competitions. Self-taught piano player since 2018, focused on learning and composing pieces.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">Finance Club</h3>
+                    <p class="extracurricular-role">Member</p>
+                    <p class="extracurricular-description">
+                        Analyzed stock trends through a market simulator. Gained practical experience in financial analysis and investment strategies.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">AI Club</h3>
+                    <p class="extracurricular-role">Member</p>
+                    <p class="extracurricular-description">
+                        Involved in learning and applying artificial intelligence concepts. Worked with peers to develop and test AI models for various applications.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">GEMS Summer Program</h3>
+                    <p class="extracurricular-role">Participant</p>
+                    <p class="extracurricular-description">
+                        Completed a lab-based research program, working on STEM-related projects that developed skills in scientific experimentation, data analysis, and technical problem-solving.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">Model UN Club</h3>
+                    <p class="extracurricular-role">Member</p>
+                    <p class="extracurricular-description">
+                        Prepared comprehensive research about countries to be presented in the County Competition. Developed skills in public speaking, diplomacy, and international relations.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">Chinmaya Mission Washington Regional Center</h3>
+                    <p class="extracurricular-role">Volunteer</p>
+                    <p class="extracurricular-description">
+                        Dedicated 250+ hours to community service contributing to local initiatives and youth development programs. Led STEM workshops, organized team-building games, and designed interactive financial literacy activities for students aged 5-12.
+                    </p>
+                </div>
+                
+                <div class="extracurricular-item">
+                    <h3 class="extracurricular-title">Independent Tutoring</h3>
+                    <p class="extracurricular-role">Tutor</p>
+                    <p class="extracurricular-description">
+                        Organized and taught a free Python course for middle schoolers. Worked with students to create final projects that could help the community (June-July 2024).
+                    </p>
+                </div>
