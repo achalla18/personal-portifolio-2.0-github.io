@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun Challa Personal Page</title>
+    <title>Arjun Challa | Software Developer & ML Engineer</title>
     <style>
         * {
             margin: 0;
@@ -27,39 +27,16 @@
             background: var(--bg-dark);
             color: var(--text-primary);
             overflow-x: hidden;
-            cursor: none;
+            cursor: auto;
         }
 
         /* Custom Cursor */
         .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: all 0.1s ease;
-            transform: translate(-50%, -50%);
+            display: none;
         }
 
         .cursor-follower {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--secondary);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-            transform: translate(-50%, -50%);
-            opacity: 0.5;
-        }
-
-        .cursor.expand {
-            transform: translate(-50%, -50%) scale(1.5);
-            background: var(--primary);
-            opacity: 0.3;
+            display: none;
         }
 
         /* Particle Background */
@@ -522,11 +499,8 @@
         }
 
         .beyond-card:nth-child(1).visible { animation-delay: 0s; }
-        .beyond-card:nth-child(2).visible { animation-delay: 0.1s; }
-        .beyond-card:nth-child(3).visible { animation-delay: 0.2s; }
-        .beyond-card:nth-child(4).visible { animation-delay: 0.3s; }
-        .beyond-card:nth-child(5).visible { animation-delay: 0.4s; }
-        .beyond-card:nth-child(6).visible { animation-delay: 0.5s; }
+        .beyond-card:nth-child(2).visible { animation-delay: 0.15s; }
+        .beyond-card:nth-child(3).visible { animation-delay: 0.3s; }
 
         .beyond-card:hover {
             transform: translateY(-10px);
@@ -647,14 +621,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            body {
-                cursor: auto;
-            }
-
-            .cursor, .cursor-follower {
-                display: none;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -738,10 +704,6 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
     <!-- Particle Background -->
     <canvas id="particles-canvas"></canvas>
 
@@ -767,7 +729,7 @@
             <span class="typed-text"></span>
             <span class="cursor-blink"></span>
         </div>
-        <p>High school student passionate about machine learning, software development, and building impactful solutions. Currently working on predictive models and web applications.</p>
+        <p>High school student passionate about machine learning, data science, software development, and building impactful solutions. Currently working on Hi-Lite, a social networking site for high school students.</p>
         <div class="cta-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -949,7 +911,6 @@
             <p>Life outside of programming</p>
         </div>
         <div class="beyond-grid">
-
             <div class="beyond-card">
                 <div class="beyond-icon">🌱</div>
                 <h3>Hiking and the outdoors</h3>
@@ -958,7 +919,12 @@
             <div class="beyond-card">
                 <div class="beyond-icon">🏀</div>
                 <h3>Sports</h3>
-                <p>Avid ports enthusiast interested in the NFL and NBA. Falcons and Heat fan! Also play basketball and golf.</p>
+                <p>Avid sports enthusiast interested in the NFL and NBA. Falcons and Heat fan! Also play basketball and golf.</p>
+            </div>
+            <div class="beyond-card">
+                <div class="beyond-icon">🎷</div>
+                <h3>Music</h3>
+                <p>Play the Piano & Saxophone. Self taught in Piano!</p>
             </div>
         </div>
     </section>
@@ -973,7 +939,7 @@
             <div class="contact-card">
                 <div class="contact-icon">📧</div>
                 <h3>Email</h3>
-                <a href="mailto:arjun.c.1818@gmail.com">arjun.c.1818@gmail.com</a>
+                <a href="/cdn-cgi/l/email-protection#cfaebda5baa1e1ace1fef7fef78fa8a2aea6a3e1aca0a2"><span class="__cf_email__" data-cfemail="3051425a455e1e531e0108010870575d51595c1e535f5d">[email&#160;protected]</span></a>
             </div>
             <div class="contact-card">
                 <div class="contact-icon">💻</div>
@@ -988,7 +954,7 @@
         </div>
     </section>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ============================================
         // PARTICLE SYSTEM
         // ============================================
@@ -1059,45 +1025,6 @@
                         }
                     }
                 }
-                
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        // ============================================
-        // CUSTOM CURSOR
-        // ============================================
-        class CustomCursor {
-            constructor() {
-                this.cursor = document.querySelector('.cursor');
-                this.follower = document.querySelector('.cursor-follower');
-                this.cursorX = 0;
-                this.cursorY = 0;
-                this.followerX = 0;
-                this.followerY = 0;
-                
-                document.addEventListener('mousemove', (e) => {
-                    this.cursorX = e.clientX;
-                    this.cursorY = e.clientY;
-                });
-                
-                // Expand on hover
-                document.querySelectorAll('a, button, .project-card').forEach(el => {
-                    el.addEventListener('mouseenter', () => this.cursor.classList.add('expand'));
-                    el.addEventListener('mouseleave', () => this.cursor.classList.remove('expand'));
-                });
-                
-                this.animate();
-            }
-            
-            animate() {
-                this.followerX += (this.cursorX - this.followerX) * 0.1;
-                this.followerY += (this.cursorY - this.followerY) * 0.1;
-                
-                this.cursor.style.left = this.cursorX + 'px';
-                this.cursor.style.top = this.cursorY + 'px';
-                this.follower.style.left = this.followerX + 'px';
-                this.follower.style.top = this.followerY + 'px';
                 
                 requestAnimationFrame(() => this.animate());
             }
@@ -1236,9 +1163,6 @@
             
             // Initialize systems
             new ParticleSystem();
-            if (window.innerWidth > 768) {
-                new CustomCursor();
-            }
             new ScrollAnimations();
             new ScrollProgress();
             new NavbarScroll();
