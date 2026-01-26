@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Challa — Machine Learning Research & Product Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div class="boot-screen" id="bootScreen">
+        <div class="boot-logo">AC</div>
+        <div class="boot-version">ArjunOS v1.0</div>
+        <div class="boot-terminal">
+            <div class="boot-line">Loading system...</div>
+            <div class="boot-line">Initializing modules...</div>
+            <div class="boot-line">Loading user profile...</div>
+            <div class="boot-line">Starting desktop environment...</div>
+            <div class="boot-line">Welcome, User<span class="boot-cursor"></span></div>
+        </div>
+    </div>
+
+    <!-- CRT Effect -->
+    <div class="crt-effect" id="crtEffect"></div>
+
+    <!-- Desktop -->
+    <div class="desktop" id="desktop">
+        <div class="bg-effects">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-window="about" style="top:30px;left:40px;"><div class="desktop-icon-img">👤</div><span class="desktop-icon-label">About Me</span></div>
+            <div class="desktop-icon" data-window="projects" style="top:180px;left:50px;"><div class="desktop-icon-img">📁</div><span class="desktop-icon-label">Projects</span></div>
+            <div class="desktop-icon" data-window="experience" style="top:330px;left:35px;"><div class="desktop-icon-img">💼</div><span class="desktop-icon-label">Experience</span></div>
+            <div class="desktop-icon" data-window="skills" style="top:50px;left:180px;"><div class="desktop-icon-img">⚡</div><span class="desktop-icon-label">Skills</span></div>
+            <div class="desktop-icon" data-window="resume" style="top:200px;left:190px;"><div class="desktop-icon-img">📄</div><span class="desktop-icon-label">Resume</span></div>
+            <div class="desktop-icon" data-window="contact" style="top:350px;left:175px;"><div class="desktop-icon-img">✉️</div><span class="desktop-icon-label">Contact</span></div>
+            <div class="desktop-icon" data-link="https://github.com/achalla18" style="top:80px;left:320px;"><div class="desktop-icon-img"><img src="github.png" alt="GitHub"></div><span class="desktop-icon-label">GitHub</span></div>
+            <div class="desktop-icon" data-link="https://www.linkedin.com/in/arjun-challa-614950347/" style="top:230px;left:330px;"><div class="desktop-icon-img"><img src="linkedin.png" alt="LinkedIn"></div><span class="desktop-icon-label">LinkedIn</span></div>
+            <div class="desktop-icon" data-link="old-website.html" style="top:380px;left:315px;"><div class="desktop-icon-img">🌐</div><span class="desktop-icon-label">Old Website</span></div>
+        </div>
+
+        <!-- About Window -->
+        <div class="window" id="window-about" style="width:580px;height:520px;top:60px;left:150px;">
+            <div class="window-titlebar">
+                <div class="window-title"><span class="window-title-underscore">_</span> About Me</div>
+                <div class="window-controls">
+                    <button class="window-btn btn-minimize" data-action="minimize"></button>
+                    <button class="window-btn btn-maximize" data-action="maximize"></button>
+                    <button class="window-btn btn-close" data-action="close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="about-header">
+                    <div class="about-avatar">
+                        <div class="about-avatar-ring"></div>
+                        <div class="about-avatar-inner"><span class="about-avatar-initials">AC</span></div>
+                    </div>
+                    <div class="about-info">
+                        <h1>Arjun Challa</h1>
+                        <h2>Software Developer & ML Engineer</h2>
+                        <p>High school student passionate about machine learning, data science, software development, and building impactful solutions. Currently working on Hi-Lite, a social networking site for high school students.</p>
+                    </div>
+                </div>
+                <div class="about-section">
+                    <h4>Statistics</h4>
+                    <div class="about-stats">
+                        <div class="stat-card"><div class="stat-value">4+</div><div class="stat-label">Internships</div></div>
+                        <div class="stat-card"><div class="stat-value">9+</div><div class="stat-label">Major Projects</div></div>
+                        <div class="stat-card"><div class="stat-value">25+</div><div class="stat-label">Web Apps</div></div>
+                    </div>
+                </div>
+                <div class="about-section">
+                    <h4>Interests</h4>
+                    <div class="interests-grid">
+                        <span class="interest-tag">🏀 Basketball</span>
+                        <span class="interest-tag">⛳ Golf</span>
+                        <span class="interest-tag">🥾 Hiking</span>
+                        <span class="interest-tag">🎹 Piano</span>
+                        <span class="interest-tag">🎷 Saxophone</span>
+                        <span class="interest-tag">🏈 NFL (Falcons)</span>
+                        <span class="interest-tag">🏀 NBA (Heat)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Window -->
+        <div class="window" id="window-projects" style="width:620px;height:550px;top:80px;left:200px;">
+            <div class="window-titlebar">
+                <div class="window-title"><span class="window-title-underscore">_</span> Projects</div>
+                <div class="window-controls">
+                    <button class="window-btn btn-minimize" data-action="minimize"></button>
+                    <button class="window-btn btn-maximize" data-action="maximize"></button>
+                    <button class="window-btn btn-close" data-action="close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">👁️</div>
+                            <div class="project-meta"><h3 class="project-title">Simple Proctor</h3><span class="project-org">Personal Project</span></div>
+                        </div>
+                        <p class="project-description">Machine learning-based exam proctoring system with real-time face detection, multi-face alerts, and a clean web interface for monitoring exam integrity.</p>
+                        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Flask</span><span class="project-tag">OpenCV</span><span class="project-tag">ML</span></div>
+                        <div class="project-footer"><a href="https://github.com/achalla18/simple_proctor" target="_blank" class="project-link">View on GitHub →</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">📄</div>
+                            <div class="project-meta"><h3 class="project-title">Resume Fit Scorer</h3><span class="project-org">Personal Project</span></div>
+                        </div>
+                        <p class="project-description">ML-powered resume screening system using TF-IDF and Logistic Regression to score resumes 0-100 for ML/SWE role fit with explainable keyword analysis.</p>
+                        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Scikit-learn</span><span class="project-tag">Flask</span><span class="project-tag">TF-IDF</span></div>
+                        <div class="project-footer"><a href="https://github.com/achalla18/webml-resume" target="_blank" class="project-link">View on GitHub →</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">💰</div>
+                            <div class="project-meta"><h3 class="project-title">Finance Tracker</h3><span class="project-org">Personal Project</span></div>
+                        </div>
+                        <p class="project-description">Personal finance management app with transaction tracking, income/expense categorization, visual spending analytics, and secure user authentication.</p>
+                        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">SQLite</span><span class="project-tag">JavaScript</span><span class="project-tag">Charts</span></div>
+                        <div class="project-footer"><a href="https://github.com/achalla18/personal-finance-tracker" target="_blank" class="project-link">View on GitHub →</a></div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">📈</div>
+                            <div class="project-meta"><h3 class="project-title">Portfolio Optimization</h3><span class="project-org">American University Research</span></div>
+                        </div>
+                        <p class="project-description">Research on Mean-Variance Optimization, analyzing how stock selection and market conditions (2020-2023) impact portfolio risk and returns.</p>
+                        <div class="project-tags"><span class="project-tag">R</span><span class="project-tag">Quadprog</span><span class="project-tag">Statistics</span><span class="project-tag">Finance</span></div>
+                        <div class="project-footer"><a href="https://drive.google.com/file/d/1ZfJJrepGysA9BTgQZ2huk21Z1I8aVgwO/view?usp=sharing" target="_blank" class="project-link">View Report →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Window -->
+        <div class="window" id="window-experience" style="width:560px;height:500px;top:100px;left:250px;">
+            <div class="window-titlebar">
+                <div class="window-title"><span class="window-title-underscore">_</span> Experience</div>
+                <div class="window-controls">
+                    <button class="window-btn btn-minimize" data-action="minimize"></button>
+                    <button class="window-btn btn-maximize" data-action="maximize"></button>
+                    <button class="window-btn btn-close" data-action="close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="experience-list">
+                    <div class="experience-card">
+                        <div class="experience-header"><h3 class="experience-title">NC State University</h3><span class="experience-date">Apr 2025 — Nov 2025</span></div>
+                        <p class="experience-description">Software Intern — Developing TensorFlow-based predictive models for rainfall patterns and flood risk identification in Raleigh. Collaborating with PhD researchers on geospatial data integration.</p>
+                        <div class="experience-skills"><span class="experience-skill">TensorFlow</span><span class="experience-skill">Python</span><span class="experience-skill">Geospatial</span></div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header"><h3 class="experience-title">USC TSRL Data Lab</h3><span class="experience-date">Mar 2025 — Nov 2025</span></div>
+                        <p class="experience-description">Data Lab Member — Analyzing athlete data and building predictive performance models using AI techniques for real-world training scenarios.</p>
+                        <div class="experience-skills"><span class="experience-skill">Sports Analytics</span><span class="experience-skill">AI</span><span class="experience-skill">Python</span></div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header"><h3 class="experience-title">American University</h3><span class="experience-date">Jun 2025 — Aug 2025</span></div>
+                        <p class="experience-description">Research Assistant — Conducted research on Mean-Variance Optimization under Dr. Hamid Semiyari, implementing solutions in R with quadprog package for optimal asset allocation.</p>
+                        <div class="experience-skills"><span class="experience-skill">R</span><span class="experience-skill">Finance</span><span class="experience-skill">Optimization</span></div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header"><h3 class="experience-title">Fort Detrick (AEOP ARMI BioFabUSA)</h3><span class="experience-date">Jul 2024 — Aug 2024</span></div>
+                        <p class="experience-description">Research Intern — Focused on biofabrication and commercialization. Developed 3D printable solution for Gastroesophageal Reflux Disease with comprehensive market analysis.</p>
+                        <div class="experience-skills"><span class="experience-skill">Biofabrication</span><span class="experience-skill">Research</span><span class="experience-skill">Healthcare</span></div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-header"><h3 class="experience-title">Computer Science Club</h3><span class="experience-date">Aug 2024 — Present</span></div>
+                        <p class="experience-description">Vice-President — Leading club operations, managing fundraising initiatives, and organizing workshops and competitions to enhance technical skills among members.</p>
+                        <div class="experience-skills"><span class="experience-skill">Leadership</span><span class="experience-skill">Teaching</span><span class="experience-skill">Organization</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Window -->
+        <div class="window" id="window-skills" style="width:500px;height:450px;top:120px;left:300px;">
+            <div class="window-titlebar">
+                <div class="window-title"><span class="window-title-underscore">_</span> Skills</div>
+                <div class="window-controls">
+                    <button class="window-btn btn-minimize" data-action="minimize"></button>
+                    <button class="window-btn btn-maximize" data-action="maximize"></button>
+                    <button class="window-btn btn-close" data-action="close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="skills-section">
+                    <h3>Languages</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag expert">Python</span>
+                        <span class="skill-tag advanced">JavaScript</span>
+                        <span class="skill-tag advanced">HTML/CSS</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">PHP</span>
+                    </div>
+                </div>
+                <div class="skills-section">
+                    <h3>Frameworks & Tools</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag expert">PyTorch / TensorFlow</span>
+                        <span class="skill-tag advanced">Flask</span>
+                        <span class="skill-tag expert">Pandas / NumPy</span>
+                        <span class="skill-tag advanced">OpenCV</span>
+                        <span class="skill-tag advanced">Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skills-section">
+                    <h3>Specializations</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag expert">Machine Learning</span>
+                        <span class="skill-tag advanced">Computer Vision</span>
+                        <span class="skill-tag advanced">Data Analysis</span>
+                        <span class="skill-tag advanced">Web Development</span>
+                        <span class="skill-tag">Predictive Modeling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Window -->
+        <div class="window" id="window-resume" style="width:520px;height:480px;top:70px;left:350px;">
+            <div class="window-titlebar">
+                <div class="window-title"><span class="window-title-underscore">_</span> Resume / CV</div>
+                <div class="window-controls">
+                    <button class="window-btn btn-minimize" data-action="minimize"></button>
+                    <button class="window-btn btn-maximize" data-action="maximize"></button>
+                    <button class="window-btn btn-close" data-action="close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="resume-header"><h1>Arjun Challa</h1><p>Software Developer & ML Engineer</p></div>
+                <div class="resume-section">
+                    <h3>Education</h3>
+                    <div class="resume-item"><strong>High School</strong><p>Vice-President, Computer Science Club</p></div>
+                </div>
+                <div class="resume-section">
+                    <h3>Highlights</h3>
+                    <ul class="resume-highlights">
+                        <li>4+ research internships at NC State, USC, American University, Fort Detrick</li>
+                        <li>Gold Presidential Service Award recipient</li>
+                        <li>Vice-President of Computer Science Club</li>
+                        <li>9+ major projects completed, 25+ web applications created</li>
+                        <li>Currently building Hi-Lite, a social networking site for high schoolers</li>
+                        <li>Full-stack development with Python, Flask, TensorFlow, and more</li>
+                    </ul>
+                </div>
+                <div class="resume-section">
+                    <h3>Focus Areas</h3>
+                    <p style="color:var(--text-secondary);font-size:.9rem;">Machine Learning • Computer Vision • Data Analysis • Web Development • Predictive Modeling</p>
+                </div>
+                <a href="Arjun_Challa_Resume.pdf" class="resume-download" target="_blank"><span>📥</span> Download Full Resume</a>
+            </div>
+        </div>
+
+        <!-- Contact Window -->
+        <div class="window" id="window-contact" style="width:450px;height:380px;top:90px;left:400px;">
+            <div class="window-titlebar">
+                <div class="window-title"><span class="window-title-underscore">_</span> Contact</div>
+                <div class="window-controls">
+                    <button class="window-btn btn-minimize" data-action="minimize"></button>
+                    <button class="window-btn btn-maximize" data-action="maximize"></button>
+                    <button class="window-btn btn-close" data-action="close"></button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="contact-links">
+                    <a href="mailto:arjun.c.1818@gmail.com" class="contact-link">
+                        <div class="contact-link-icon">📧</div>
+                        <div class="contact-link-info"><div class="contact-link-label">Email</div><div class="contact-link-value">arjun.c.1818@gmail.com</div></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/arjun-challa-614950347/" target="_blank" class="contact-link">
+                        <div class="contact-link-icon">💼</div>
+                        <div class="contact-link-info"><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">Arjun Challa</div></div>
+                    </a>
+                    <a href="https://github.com/achalla18" target="_blank" class="contact-link">
+                        <div class="contact-link-icon">💻</div>
+                        <div class="contact-link-info"><div class="contact-link-label">GitHub</div><div class="contact-link-value">@achalla18</div></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-start">
+                <button class="start-btn" id="startBtn"><span class="start-btn-logo">AC</span><span>Start</span></button>
+                <div class="taskbar-profile">AC</div>
+            </div>
+            <div class="taskbar-apps" id="taskbarApps">
+                <button class="taskbar-app" data-window="about"><span class="taskbar-app-icon">👤</span><span>About</span></button>
+                <button class="taskbar-app" data-window="projects"><span class="taskbar-app-icon">📁</span><span>Projects</span></button>
+                <button class="taskbar-app" data-window="experience"><span class="taskbar-app-icon">💼</span><span>Experience</span></button>
+                <button class="taskbar-app" data-window="skills"><span class="taskbar-app-icon">⚡</span><span>Skills</span></button>
+                <button class="taskbar-app" data-window="resume"><span class="taskbar-app-icon">📄</span><span>Resume</span></button>
+                <button class="taskbar-app" data-window="contact"><span class="taskbar-app-icon">✉️</span><span>Contact</span></button>
+            </div>
+            <div class="taskbar-time"><span class="taskbar-time-clock" id="clock">00:00</span><span id="date">Jan 1, 2024</span></div>
+        </div>
+
+        <!-- Start Menu -->
+        <div class="start-menu" id="startMenu">
+            <div class="start-menu-header">
+                <div class="start-menu-avatar">AC</div>
+                <div class="start-menu-user"><h3>Arjun Challa</h3><p>Software Developer & ML Engineer</p></div>
+            </div>
+            <div class="start-menu-items">
+                <button class="start-menu-item" data-window="about"><div class="start-menu-item-icon">👤</div><span>About Me</span></button>
+                <button class="start-menu-item" data-window="projects"><div class="start-menu-item-icon">📁</div><span>Projects</span></button>
+                <button class="start-menu-item" data-window="experience"><div class="start-menu-item-icon">💼</div><span>Experience</span></button>
+                <button class="start-menu-item" data-window="skills"><div class="start-menu-item-icon">⚡</div><span>Skills</span></button>
+                <button class="start-menu-item" data-window="resume"><div class="start-menu-item-icon">📄</div><span>Resume</span></button>
+                <button class="start-menu-item" data-window="contact"><div class="start-menu-item-icon">✉️</div><span>Contact</span></button>
+            </div>
+            <div class="start-menu-footer">
+                <a href="https://github.com/achalla18" target="_blank" class="start-menu-social">💻</a>
+                <a href="https://www.linkedin.com/in/arjun-challa-614950347/" target="_blank" class="start-menu-social">💼</a>
+                <a href="mailto:arjun.c.1818@gmail.com" class="start-menu-social">📧</a>
+            </div>
+        </div>
+
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-items">
+                <button class="mobile-nav-item" data-window="about"><span class="mobile-nav-item-icon">👤</span><span class="mobile-nav-item-label">About</span></button>
+                <button class="mobile-nav-item" data-window="projects"><span class="mobile-nav-item-icon">📁</span><span class="mobile-nav-item-label">Projects</span></button>
+                <button class="mobile-nav-item" data-window="experience"><span class="mobile-nav-item-icon">💼</span><span class="mobile-nav-item-label">Experience</span></button>
+                <button class="mobile-nav-item" data-window="skills"><span class="mobile-nav-item-icon">⚡</span><span class="mobile-nav-item-label">Skills</span></button>
+                <button class="mobile-nav-item" data-window="contact"><span class="mobile-nav-item-icon">✉️</span><span class="mobile-nav-item-label">Contact</span></button>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
